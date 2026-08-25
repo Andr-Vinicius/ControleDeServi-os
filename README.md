@@ -62,8 +62,8 @@ Projeto/
 
 ## Funcionalidades implementadas
 
-- **Login** com validação de email/senha e mensagem `Ops, Email ou Senha inválido`.
-- **Cadastro de usuário** (tela extra sugerida pelo wireframe).
+- **Login** com validação de email/senha.
+- **Cadastro de usuário** 
 - **Dashboard**:
   - Dados do usuário logado, data atual e tabela de serviços prestados
     (id, descrição, usuário, valor, status) com botões **Alterar**, **Excluir**
@@ -71,14 +71,12 @@ Projeto/
   - Valor total dos serviços prestados **pelo usuário logado**, em destaque.
   - Lista de serviços pendentes do usuário logado.
   - Filtros por período (data inicial/final), nome do serviço, status e
-    nome do usuário — combináveis entre si.
-- **Cadastro de novo serviço**: cria com status "Pendente"; em caso de falha
-  (campos obrigatórios ausentes ou inválidos) volta ao dashboard com mensagem
-  de erro, sem cadastrar nada — igual ao especificado no enunciado.
+    nome do usuário.
+- **Cadastro de novo serviço**: cria com status "Pendente".
 - **Alterar serviço**: formulário de edição de descrição/valor.
 - **Excluir serviço**: com confirmação via JS antes de enviar.
 - **Finalizar serviço**: grava `finished_at`, calcula a comissão do usuário
-  e dispara um email de notificação (função nativa `mail()` do PHP).
+  e dispara um email de notificação para o usuário.
 
 ## Regra de comissão
 
@@ -106,9 +104,7 @@ sendmail_from = no-reply@sistema-servicos.local
 4. Inicie o executável e acesse http://localhost:8025 no navegador para que possa testar o envio de emails.
 
 
-## Observações de implementação
+## Observações futuras
 
-- Todas as queries usam PDO com prepared statements.
-- Senhas armazenadas com `password_hash()`/`password_verify()` (bcrypt).
-- `session_regenerate_id()` no login, para mitigar session fixation.
-- Rotas centralizadas em `routes.php`, roteador simples em `App\Core\Router`.
+- Confirmação de senha no cadastro.
+- Separar Perfil do Usuário e Perfil do Administrador.
