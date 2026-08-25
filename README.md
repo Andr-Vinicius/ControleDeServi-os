@@ -96,7 +96,7 @@ Foi adotado **5%** para esse intervalo também.
 O envio usa a função nativa `mail()` do PHP. Para testar em ambiente local (XAMPP/WAMP) eu utilizei o Mailhog. 
 
 1. Acesse o repositório https://github.com/mailhog/MailHog/releases e baixe o executável relacionado ao seu Sistema Operacional.
-2. Configure os dados abaixo no php.init (Lembre-se de comentar as linhas duplicadas)
+2. Configure os dados abaixo no php.ini (Lembre-se de comentar as linhas duplicadas)
 ```
 [mail function]
 SMTP = localhost
