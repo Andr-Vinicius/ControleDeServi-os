@@ -5,9 +5,6 @@
 ![Arquitetura](https://img.shields.io/badge/Arquitetura-MVC-blue)
 ![Sem framework](https://img.shields.io/badge/Framework-nenhum-lightgrey)
 
-Teste técnico de avaliação (PHP orientado a objetos + MVC + PDO + JavaScript puro), sem uso de Composer ou de frameworks de back-end/front-end, conforme exigido pelo enunciado.
-
-Repositório: [github.com/titanSoftwareERP/projeto_avaliacao_php](https://github.com/titanSoftwareERP/projeto_avaliacao_php)
 
 ## Índice
 
@@ -15,7 +12,6 @@ Repositório: [github.com/titanSoftwareERP/projeto_avaliacao_php](https://github
 - [Estrutura do projeto](#estrutura-do-projeto)
 - [Pré-requisitos](#pré-requisitos)
 - [Como rodar (XAMPP / WAMP / MAMP)](#como-rodar-xampp--wamp--mamp)
-- [Login de teste](#login-de-teste)
 - [Funcionalidades implementadas](#funcionalidades-implementadas)
 - [Regra de comissão](#regra-de-comissão)
 - [Sobre o envio de email](#sobre-o-envio-de-email)
@@ -63,14 +59,6 @@ Projeto/
 > (`public/index.php`), então funciona independente do nome/local da pasta
 > dentro do `htdocs` — não é necessário editar links manualmente.
 
-### Login de teste
-
-| Email                    | Senha  |
-|--------------------------|--------|
-| jose.silva@teste.com     | 123456 |
-| maria.souza@teste.com    | 123456 |
-
-Também é possível criar um novo usuário pela tela "Cadastrar usuário" no login.
 
 ## Funcionalidades implementadas
 
@@ -100,18 +88,21 @@ O enunciado define:
 - acima de R$ 1.000,00 → 10%
 - acima de R$ 10.000,00 → 20%
 
-**Assunção**: a faixa entre R$ 250,01 e R$ 1.000,00 não foi especificada.
-Foi adotado **7%** para esse intervalo (ponto médio entre as duas faixas
-vizinhas). A regra está isolada em `App\Models\Service::calculateCommission()`,
-com o comentário da assunção — é só ajustar ali caso a regra real seja outra.
+**Observação**: a faixa entre R$ 250,01 e R$ 1.000,00 não foi especificada.
+Foi adotado **5%** para esse intervalo também.
 
 ## Sobre o envio de email
 
-O envio usa a função nativa `mail()` do PHP (nenhuma lib externa, conforme
-exigido). Em ambiente local (XAMPP/WAMP) isso normalmente não envia de fato
-sem um servidor SMTP configurado (ex.: Mercury Mail, sendmail, ou um relay de
-testes como Mailtrap/Mailhog) — mas a chamada é feita corretamente e nunca
-impede a finalização do serviço caso o envio falhe.
+O envio usa a função nativa `mail()` do PHP. Para testar em ambiente local (XAMPP/WAMP) eu utilizei o Mailhog. 
+
+1. Acesse o repositório https://github.com/mailhog/MailHog/releases e baixe o executável relacionado ao seu Sistema Operacional.
+2. Configure os dados abaixo no php.init (Lembre-se de comentar as linhas duplicadas)
+[mail function]
+SMTP = localhost
+smtp_port = 1025
+sendmail_from = no-reply@sistema-servicos.local
+4. Inicie o executável e acesse http://localhost:8025 no navegador para que possa testar o envio de emails.
+
 
 ## Observações de implementação
 
