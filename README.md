@@ -97,10 +97,12 @@ O envio usa a função nativa `mail()` do PHP. Para testar em ambiente local (XA
 
 1. Acesse o repositório https://github.com/mailhog/MailHog/releases e baixe o executável relacionado ao seu Sistema Operacional.
 2. Configure os dados abaixo no php.init (Lembre-se de comentar as linhas duplicadas)
+```
 [mail function]
 SMTP = localhost
 smtp_port = 1025
 sendmail_from = no-reply@sistema-servicos.local
+```
 4. Inicie o executável e acesse http://localhost:8025 no navegador para que possa testar o envio de emails.
 
 
