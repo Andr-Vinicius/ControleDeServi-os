@@ -55,10 +55,6 @@ Projeto/
    de `root` / (senha em branco).
 4. Acesse `http://localhost/Projeto/public/` no navegador.
 
-> A aplicação calcula a `BASE_URL` automaticamente a partir do próprio script
-> (`public/index.php`), então funciona independente do nome/local da pasta
-> dentro do `htdocs` — não é necessário editar links manualmente.
-
 
 ## Funcionalidades implementadas
 
